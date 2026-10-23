@@ -9,9 +9,12 @@ export default function Home() {
 
   const isUser = false;
 
-  if (!isUser) {
-    router.push("/login");
-  }
+  // useEffect waits for main page render to finish
+  useEffect(() => {
+    if (!isUser) {
+      router.push("/login");
+    }
+  }, [isUser, router]);
 
   return <div>Main Page</div>;
 };
