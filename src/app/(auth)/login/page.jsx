@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,6 +51,10 @@ const page = () => {
         {passwordError ? <p className={styles["signin-error"]}>{passwordError}</p> : null}
         <p className={styles["signin-toggle"]} onClick={handleSeePassword}>See Password</p>
         <button className={styles["signin-button"]} type="submit">Sign in</button>
+
+        <Link href="/register" className={styles.register}>
+          Register new account. <span>Sign Up</span>
+        </Link>
       </form>
     </div>
   );

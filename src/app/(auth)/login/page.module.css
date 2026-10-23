@@ -91,6 +91,25 @@
   box-shadow: 0 0 0 3px var(--signin-focus);
 }
 
+.register {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--signin-muted);
+  text-decoration: none;
+}
+
+.registerAction {
+  font-weight: 600;
+  color: var(--signin-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.register:hover .registerAction {
+  color: var(--signin-accent-hover);
+}
+
 /* space between a field and whatever follows it */
 .signin-input + .signin-error,
 .signin-input + .signin-toggle {
@@ -187,3 +206,4 @@
     transition: none;
   }
 }
+
