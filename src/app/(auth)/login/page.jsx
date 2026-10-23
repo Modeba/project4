@@ -3,11 +3,18 @@
 import { useState } from "react";
 
 const page = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     console.log("Form Submitted");
   };
+
+  const handleSeePassword = () => {
+    setIsVisible(!isVisible);
+  }
 
   return (
     <div>
@@ -19,7 +26,12 @@ const page = () => {
         placeholder="Username"
         onChange={(event) => setUsername(event.target.value)}
       />
-      <input type="password" placeholder="Password" />
+      <input
+        type={isVisible ? 'text' : 'password'}
+        placeholder="Password"
+        onChange={(event) => setPassword(event.target.value)}
+      />
+      <p onClick={handleSeePassword}>See Password</p>
       </form>
     </div>
   );
