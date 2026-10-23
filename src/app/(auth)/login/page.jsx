@@ -9,6 +9,7 @@ const page = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     console.log("Form Submitted");
   };
 
@@ -32,6 +33,7 @@ const page = () => {
         onChange={(event) => setPassword(event.target.value)}
       />
       <p onClick={handleSeePassword}>See Password</p>
+      <button type = "submit">Sign in</button>
       </form>
     </div>
   );
