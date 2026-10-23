@@ -11,14 +11,16 @@ const page = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}></form>
+      <form onSubmit={handleSubmit}>
       <h3>Sign In</h3>
       <p>please sign in</p>
       <input
         type="text"
         placeholder="Username"
-        onChange={(event) => console.log(event.target.value)}
+        onChange={(event) => setUsername(event.target.value)}
       />
+      <input type="password" placeholder="Password" />
+      </form>
     </div>
   );
 };
