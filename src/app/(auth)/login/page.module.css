@@ -1,0 +1,209 @@
+/* ---------- Tokens ---------- */
+:root {
+  --signin-bg: #eef2f3;
+  --signin-surface: #ffffff;
+  --signin-ink: #14262b;
+  --signin-muted: #5f747a;
+  --signin-line: #cdd9dc;
+  --signin-accent: #0f6b73;
+  --signin-accent-hover: #0b545b;
+  --signin-error: #b3261e;
+  --signin-error-bg: #fdecea;
+  --signin-focus: rgba(15, 107, 115, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --signin-bg: #0e1a1d;
+    --signin-surface: #16262a;
+    --signin-ink: #e8f0f1;
+    --signin-muted: #93a9ae;
+    --signin-line: #2c4248;
+    --signin-accent: #3cb4bf;
+    --signin-accent-hover: #5cc8d2;
+    --signin-error: #ff8a80;
+    --signin-error-bg: #3a1f1d;
+    --signin-focus: rgba(60, 180, 191, 0.32);
+  }
+}
+
+/* ---------- Page ---------- */
+.signin-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--signin-bg);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--signin-ink);
+}
+
+/* ---------- Card ---------- */
+.signin-form {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 32px;
+  background: var(--signin-surface);
+  border: 1px solid var(--signin-line);
+  border-top: 4px solid var(--signin-accent);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(20, 38, 43, 0.08);
+}
+
+.signin-title {
+  margin: 0 0 6px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.signin-subtitle {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  color: var(--signin-muted);
+}
+
+/* ---------- Inputs ---------- */
+.signin-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--signin-ink);
+  background: var(--signin-bg);
+  border: 1px solid var(--signin-line);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.signin-input::placeholder {
+  color: var(--signin-muted);
+}
+
+.signin-input:focus {
+  border-color: var(--signin-accent);
+  box-shadow: 0 0 0 3px var(--signin-focus);
+}
+
+.register {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--signin-muted);
+  text-decoration: none;
+}
+
+.registerAction {
+  font-weight: 600;
+  color: var(--signin-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.register:hover .registerAction {
+  color: var(--signin-accent-hover);
+}
+
+/* space between a field and whatever follows it */
+.signin-input + .signin-error,
+.signin-input + .signin-toggle {
+  margin-top: 8px;
+}
+
+.signin-input + .signin-input,
+.signin-error + .signin-input {
+  margin-top: 16px;
+}
+
+/* ---------- Error messages ---------- */
+.signin-error {
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--signin-error);
+  background: var(--signin-error-bg);
+  border-left: 3px solid var(--signin-error);
+  border-radius: 4px;
+}
+
+/* ---------- Show / hide password ---------- */
+.signin-toggle {
+  align-self: flex-start;
+  margin: 10px 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--signin-accent);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.signin-toggle:hover {
+  color: var(--signin-accent-hover);
+}
+
+/* ---------- Submit ---------- */
+.signin-button {
+  margin-top: 24px;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #ffffff;
+  background: var(--signin-accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.signin-button:hover {
+  background: var(--signin-accent-hover);
+}
+
+.signin-button:active {
+  transform: translateY(1px);
+}
+
+.signin-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--signin-focus);
+}
+
+@media (prefers-color-scheme: dark) {
+  .signin-button {
+    color: #0e1a1d;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .signin-page {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 10vh;
+  }
+
+  .signin-form {
+    padding: 28px 22px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signin-input,
+  .signin-toggle,
+  .signin-button {
+    transition: none;
+  }
+}
+

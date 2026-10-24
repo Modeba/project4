@@ -5,11 +5,16 @@ import { useState , useEffect} from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const rounter = useRouter();
+  const router = useRouter();
+
   const isUser = false;
-  if (!isUser) {
-    rounter.push("/login");
-  }
+
+  // useEffect waits for main page render to finish
+  useEffect(() => {
+    if (!isUser) {
+      router.push("/login");
+    }
+  }, [isUser, router]);
 
   return <div>Main Page</div>;
 };
